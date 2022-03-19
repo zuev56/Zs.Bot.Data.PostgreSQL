@@ -6,8 +6,8 @@
       <Version>6.0.2</Version>
       <Authors>zuev56 (Sergei Zuev)</Authors>
       <Company>zuev56 (Sergei Zuev)</Company>
-      <RepositoryUrl>https://github.com/zuev56/Zs.Bot.Data/tree/main/src/PostgreSQL</RepositoryUrl>
-      <PackageProjectUrl>https://www.nuget.org/packages/Zs.Bot.Data.PostgreSQL/</PackageProjectUrl>
+      <RepositoryUrl>https://github.com/zuev56/Zs.Bot.Data.PostgreSQL</RepositoryUrl>
+      <PackageProjectUrl>https://www.nuget.org/packages/Zs.Bot.Data.PostgreSQL</PackageProjectUrl>
   </PropertyGroup>
 
   <ItemGroup>
