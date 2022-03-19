@@ -1,0 +1,47 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net6.0</TargetFramework>
+      <PackageId>Zs.Bot.Data.PostgreSQL</PackageId>
+      <Version>6.0.2</Version>
+      <Authors>zuev56 (Sergei Zuev)</Authors>
+      <Company>zuev56 (Sergei Zuev)</Company>
+      <RepositoryUrl>https://github.com/zuev56/Zs.Bot.Data/tree/main/src/PostgreSQL</RepositoryUrl>
+      <PackageProjectUrl>https://www.nuget.org/packages/Zs.Bot.Data.PostgreSQL/</PackageProjectUrl>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="SQL\Priveleges.sql" />
+    <None Remove="SQL\SequencesUpdate.sql" />
+    <None Remove="SQL\StoredFunctions.sql" />
+    <None Remove="SQL\Triggers.sql" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Include="SQL\Triggers.sql" />
+    <EmbeddedResource Include="SQL\Priveleges.sql" />
+    <EmbeddedResource Include="SQL\SequencesUpdate.sql" />
+    <EmbeddedResource Include="SQL\StoredFunctions.sql" />
+  </ItemGroup>
+  
+  <ItemGroup>
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="6.0.3">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Relational" Version="6.0.3" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="6.0.3">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+    <PackageReference Include="Microsoft.Extensions.Configuration.EnvironmentVariables" Version="6.0.1" />
+    <PackageReference Include="Microsoft.Extensions.Configuration.Json" Version="6.0.0" />
+    <PackageReference Include="Npgsql.EntityFrameworkCore.PostgreSQL" Version="6.0.3" />
+    <PackageReference Include="Zs.Bot.Data" Version="6.0.1" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Service Include="{508349b6-6b84-4df5-91f0-309beebad82d}" />
+  </ItemGroup>
+
+</Project>
