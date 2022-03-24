@@ -19,7 +19,7 @@ public sealed class PostgreSqlBotContextFactory : IDbContextFactory<PostgreSqlBo
         _options = options;
     }
 
-    public PostgreSqlBotContext CreateDbContext() => new PostgreSqlBotContext(_options);
+    public PostgreSqlBotContext CreateDbContext() => new(_options);
 
     // For migrations
     public PostgreSqlBotContext CreateDbContext(string[] args)
