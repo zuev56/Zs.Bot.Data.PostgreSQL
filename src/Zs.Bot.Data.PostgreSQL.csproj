@@ -4,7 +4,7 @@
     <TargetFramework>net6.0</TargetFramework>
       <PackageId>Zs.Bot.Data.PostgreSQL</PackageId>
       <Nullable>enable</Nullable>
-      <Version>6.0.8</Version>
+      <Version>6.0.9</Version>
       <PublishTrimmed>true</PublishTrimmed>
       <Authors>zuev56 (Sergei Zuev)</Authors>
       <Company>zuev56 (Sergei Zuev)</Company>
