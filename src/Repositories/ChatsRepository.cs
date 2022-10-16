@@ -13,7 +13,7 @@ public sealed class ChatsRepository<TContext> : ChatsRepositoryBase<TContext>
     public ChatsRepository(
         IDbContextFactory<TContext> contextFactory,
         TimeSpan? criticalQueryExecutionTimeForLogging = null,
-        ILogger<ChatsRepository<TContext>> logger = null)
+        ILogger<ChatsRepository<TContext>>? logger = null)
         : base(contextFactory, criticalQueryExecutionTimeForLogging, logger)
     {
     }

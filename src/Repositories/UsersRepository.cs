@@ -13,7 +13,7 @@ public sealed class UsersRepository<TContext> : UsersRepositoryBase<TContext>
     public UsersRepository(
         IDbContextFactory<TContext> contextFactory,
         TimeSpan? criticalQueryExecutionTimeForLogging = null,
-        ILogger<UsersRepository<TContext>> logger = null)
+        ILogger<UsersRepository<TContext>>? logger = null)
         : base(contextFactory, criticalQueryExecutionTimeForLogging, logger)
     {
     }

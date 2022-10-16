@@ -10,5 +10,4 @@ public sealed class DbClient : DbClientBase<NpgsqlConnection, NpgsqlCommand>
         : base(connectionString, logger)
     {
     }
-
 }

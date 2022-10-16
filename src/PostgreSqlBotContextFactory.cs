@@ -8,7 +8,7 @@ namespace Zs.Bot.Data.PostgreSQL;
 
 public sealed class PostgreSqlBotContextFactory : IDbContextFactory<PostgreSqlBotContext>, IDesignTimeDbContextFactory<PostgreSqlBotContext>
 {
-    private readonly DbContextOptions<PostgreSqlBotContext> _options;
+    private readonly DbContextOptions<PostgreSqlBotContext> _options = null!;
 
     public PostgreSqlBotContextFactory()
     {

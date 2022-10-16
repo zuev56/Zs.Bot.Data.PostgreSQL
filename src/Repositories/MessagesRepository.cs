@@ -16,7 +16,7 @@ public sealed class MessagesRepository<TContext> : MessagesRepositoryBase<TConte
     public MessagesRepository(
         IDbContextFactory<TContext> contextFactory,
         TimeSpan? criticalQueryExecutionTimeForLogging = null,
-        ILogger<MessagesRepository<TContext>> logger = null)
+        ILogger<MessagesRepository<TContext>>? logger = null)
         : base(contextFactory, criticalQueryExecutionTimeForLogging, logger)
     {
     }
