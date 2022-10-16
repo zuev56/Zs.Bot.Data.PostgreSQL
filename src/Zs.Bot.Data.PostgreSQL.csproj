@@ -3,7 +3,7 @@
   <PropertyGroup>
     <TargetFramework>net6.0</TargetFramework>
       <PackageId>Zs.Bot.Data.PostgreSQL</PackageId>
-      <Nullable>disable</Nullable><!-- После включения внести нулабильность в описание свойств в методе ConfigureEntities (modelBuilders) -->
+      <Nullable>enable</Nullable>
       <Version>6.0.8</Version>
       <PublishTrimmed>true</PublishTrimmed>
       <Authors>zuev56 (Sergei Zuev)</Authors>

@@ -43,34 +43,30 @@ public sealed class PostgreSqlBotContext : BotContext<PostgreSqlBotContext>
                 .HasAnnotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.SerialColumn);
 
             b.Property<string>("ChatTypeId")
-                .IsRequired()
                 .HasMaxLength(10)
                 .HasColumnType("character varying(10)")
                 .HasColumnName("chat_type_id");
 
             b.Property<string>("Name")
-                .IsRequired()
                 .HasMaxLength(50)
                 .HasColumnType("character varying(50)")
                 .HasColumnName("name");
 
-            b.Property<string>("Description")
+            b.Property<string?>("Description")
                 .HasMaxLength(100)
                 .HasColumnType("character varying(100)")
                 .HasColumnName("description");
 
             b.Property<string>("RawData")
-                .IsRequired()
                 .HasColumnType("json")
                 .HasColumnName("raw_data");
 
             b.Property<string>("RawDataHash")
-                .IsRequired()
                 .HasMaxLength(50)
                 .HasColumnType("character varying(50)")
                 .HasColumnName("raw_data_hash");
 
-            b.Property<string>("RawDataHistory")
+            b.Property<string?>("RawDataHistory")
                 .HasColumnType("json")
                 .HasColumnName("raw_data_history");
 
@@ -101,7 +97,6 @@ public sealed class PostgreSqlBotContext : BotContext<PostgreSqlBotContext>
                 .HasColumnName("id");
 
             b.Property<string>("Name")
-                .IsRequired()
                 .HasMaxLength(10)
                 .HasColumnType("character varying(10)")
                 .HasColumnName("name");
@@ -119,23 +114,21 @@ public sealed class PostgreSqlBotContext : BotContext<PostgreSqlBotContext>
                 .HasColumnName("id");
 
             b.Property<string>("Group")
-                .IsRequired()
                 .HasMaxLength(50)
                 .HasColumnType("character varying(50)")
                 .HasColumnName("group");
 
-            b.Property<string>("Description")
+            b.Property<string?>("Description")
                 .HasMaxLength(100)
                 .HasColumnType("character varying(100)")
                 .HasColumnName("description");
 
-            b.Property<string>("DefaultArgs")
+            b.Property<string?>("DefaultArgs")
                 .HasMaxLength(100)
                 .HasColumnType("character varying(100)")
                 .HasColumnName("default_args");
 
             b.Property<string>("Script")
-                .IsRequired()
                 .HasMaxLength(5000)
                 .HasColumnType("character varying(5000)")
                 .HasColumnName("script");
@@ -162,13 +155,11 @@ public sealed class PostgreSqlBotContext : BotContext<PostgreSqlBotContext>
                 .HasColumnName("user_id");
 
             b.Property<string>("MessageTypeId")
-                .IsRequired()
                 .HasMaxLength(3)
                 .HasColumnType("character varying(3)")
                 .HasColumnName("message_type_id");
 
             b.Property<string>("MessengerId")
-                .IsRequired()
                 .HasMaxLength(2)
                 .HasColumnType("character varying(2)")
                 .HasColumnName("messenger_id");
@@ -177,7 +168,7 @@ public sealed class PostgreSqlBotContext : BotContext<PostgreSqlBotContext>
                 .HasColumnType("integer")
                 .HasColumnName("reply_to_message_id");
 
-            b.Property<string>("Text")
+            b.Property<string?>("Text")
                 .HasMaxLength(100)
                 .HasColumnType("character varying(100)")
                 .HasColumnName("text");
@@ -191,21 +182,19 @@ public sealed class PostgreSqlBotContext : BotContext<PostgreSqlBotContext>
                 .HasColumnName("is_deleted");
 
             b.Property<string>("RawData")
-                .IsRequired()
                 .HasColumnType("json")
                 .HasColumnName("raw_data");
 
             b.Property<string>("RawDataHash")
-                .IsRequired()
                 .HasMaxLength(50)
                 .HasColumnType("character varying(50)")
                 .HasColumnName("raw_data_hash");
 
-            b.Property<string>("RawDataHistory")
+            b.Property<string?>("RawDataHistory")
                 .HasColumnType("json")
                 .HasColumnName("raw_data_history");
 
-            b.Property<string>("FailDescription")
+            b.Property<string?>("FailDescription")
                 .HasColumnType("json")
                 .HasColumnName("fail_description");
 
@@ -248,7 +237,6 @@ public sealed class PostgreSqlBotContext : BotContext<PostgreSqlBotContext>
                 .HasColumnName("id");
 
             b.Property<string>("Name")
-                .IsRequired()
                 .HasMaxLength(50)
                 .HasColumnType("character varying(50)")
                 .HasColumnName("name");
@@ -266,7 +254,6 @@ public sealed class PostgreSqlBotContext : BotContext<PostgreSqlBotContext>
                 .HasColumnName("id");
 
             b.Property<string>("Name")
-                .IsRequired()
                 .HasMaxLength(20)
                 .HasColumnType("character varying(20)")
                 .HasColumnName("name");
@@ -285,17 +272,16 @@ public sealed class PostgreSqlBotContext : BotContext<PostgreSqlBotContext>
                 .HasAnnotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.SerialColumn);
 
             b.Property<string>("UserRoleId")
-                .IsRequired()
                 .HasMaxLength(10)
                 .HasColumnType("character varying(10)")
                 .HasColumnName("user_role_id");
 
-            b.Property<string>("Name")
+            b.Property<string?>("Name")
                 .HasMaxLength(50)
                 .HasColumnType("character varying(50)")
                 .HasColumnName("name");
 
-            b.Property<string>("FullName")
+            b.Property<string?>("FullName")
                 .HasMaxLength(50)
                 .HasColumnType("character varying(50)")
                 .HasColumnName("full_name");
@@ -305,17 +291,15 @@ public sealed class PostgreSqlBotContext : BotContext<PostgreSqlBotContext>
                 .HasColumnName("is_bot");
 
             b.Property<string>("RawData")
-                .IsRequired()
                 .HasColumnType("json")
                 .HasColumnName("raw_data");
 
             b.Property<string>("RawDataHash")
-                .IsRequired()
                 .HasMaxLength(50)
                 .HasColumnType("character varying(50)")
                 .HasColumnName("raw_data_hash");
 
-            b.Property<string>("RawDataHistory")
+            b.Property<string?>("RawDataHistory")
                 .HasColumnType("json")
                 .HasColumnName("raw_data_history");
 
@@ -346,13 +330,11 @@ public sealed class PostgreSqlBotContext : BotContext<PostgreSqlBotContext>
                 .HasColumnName("id");
 
             b.Property<string>("Name")
-                .IsRequired()
                 .HasMaxLength(50)
                 .HasColumnType("character varying(50)")
                 .HasColumnName("name");
 
             b.Property<string>("Permissions")
-                .IsRequired()
                 .HasColumnType("json")
                 .HasColumnName("permissions");
 
