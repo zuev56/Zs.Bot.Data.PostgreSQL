@@ -21,7 +21,7 @@ public sealed class MessagesRepository<TContext> : MessagesRepositoryBase<TConte
     {
     }
 
-    public override async Task<Message> FindByRawDataIdsAsync(int rawMessageId, long rawChatId)
+    public override async Task<Message?> FindByRawDataIdsAsync(int rawMessageId, long rawChatId)
     {
         return await FindBySqlAsync(
               $"select * from bot.messages "
@@ -50,10 +50,10 @@ public sealed class MessagesRepository<TContext> : MessagesRepositoryBase<TConte
 
             var messagesSinceDate = await FindAllBySqlAsync(selectChatMessagesSinceDate).ConfigureAwait(false);
 
-            foreach (var messageGroup in messagesSinceDate.GroupBy(m => m.UserId))
+            foreach (var messageGroup in messagesSinceDate.GroupBy(static m => m.UserId))
             {
                 userIdsAndMessageCounts.Add(messageGroup.Key, messageGroup.Count());
-            }     
+            }
         }
 
         return userIdsAndMessageCounts;

@@ -18,8 +18,9 @@ public sealed class UsersRepository<TContext> : UsersRepositoryBase<TContext>
     {
     }
 
-    public override async Task<User> FindByRawDataIdAsync(long rawId)
+    public override async Task<User?> FindByRawDataIdAsync(long rawId)
     {
-        return await FindBySqlAsync($"select * from bot.users where cast(raw_data ->> 'Id' as bigint) = {rawId}").ConfigureAwait(false);
+        return await FindBySqlAsync($"select * from bot.users where cast(raw_data ->> 'Id' as bigint) = {rawId}")
+            .ConfigureAwait(false);
     }
 }

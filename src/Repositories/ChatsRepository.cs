@@ -18,7 +18,7 @@ public sealed class ChatsRepository<TContext> : ChatsRepositoryBase<TContext>
     {
     }
 
-    public override async Task<Chat> FindByRawDataIdAsync(long rawId)
+    public override async Task<Chat?> FindByRawDataIdAsync(long rawId)
     {
         return await FindBySqlAsync($"select * from bot.chats where cast(raw_data ->> 'Id' as bigint) = {rawId}").ConfigureAwait(false);
     }

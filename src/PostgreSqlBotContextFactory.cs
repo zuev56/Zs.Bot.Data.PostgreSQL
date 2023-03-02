@@ -25,13 +25,11 @@ public sealed class PostgreSqlBotContextFactory : IDbContextFactory<PostgreSqlBo
     public PostgreSqlBotContext CreateDbContext(string[] args)
     {
         // TODO: exclude hardcoded config file name
-        Trace.WriteLineIf(args != null && args.Length > 0, string.Join(',', args));
-      
-        var solutionDir = Common.Extensions.Path.TryGetSolutionPath();
+        Trace.WriteLineIf(args.Length > 0, string.Join(',', args));
+
         var configuration = new ConfigurationBuilder()
             .SetBasePath(Directory.GetCurrentDirectory())
             .AddJsonFile("appsettings.json")
-            //.AddJsonFile(Path.Combine(solutionDir, "PrivateConfiguration.json"), optional: true)
             .Build();
         var connectionString = configuration.GetConnectionString("Default");
 

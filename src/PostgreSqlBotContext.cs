@@ -34,7 +34,7 @@ public sealed class PostgreSqlBotContext : BotContext<PostgreSqlBotContext>
 
     public static void ConfigureEntities(ModelBuilder modelBuilder)
     {
-        modelBuilder.Entity<Chat>(b =>
+        modelBuilder.Entity<Chat>(static b =>
         {
             b.Property<int>("Id")
                 .ValueGeneratedOnAdd()
@@ -346,67 +346,19 @@ public sealed class PostgreSqlBotContext : BotContext<PostgreSqlBotContext>
 
     public static void SeedData(ModelBuilder modelBuilder)
     {
-        modelBuilder.Entity<MessengerInfo>().HasData(new[]
-        {
-            new MessengerInfo() { Id = "TG", Name = "Telegram" },
-            new MessengerInfo() { Id = "VK", Name = "Вконтакте" },
-            new MessengerInfo() { Id = "SK", Name = "Skype" },
-            new MessengerInfo() { Id = "FB", Name = "Facebook" },
-            new MessengerInfo() { Id = "DC", Name = "Discord" }
-        });
+        modelBuilder.Entity<MessengerInfo>().HasData(new MessengerInfo { Id = "TG", Name = "Telegram" }, new MessengerInfo { Id = "VK", Name = "Вконтакте" }, new MessengerInfo { Id = "SK", Name = "Skype" }, new MessengerInfo { Id = "FB", Name = "Facebook" }, new MessengerInfo { Id = "DC", Name = "Discord" });
 
-        modelBuilder.Entity<ChatType>().HasData(new[]
-        {
-            new ChatType() { Id = "CHANNEL", Name = "Channel" },
-            new ChatType() { Id = "GROUP", Name = "Group" },
-            new ChatType() { Id = "PRIVATE", Name = "Private" },
-            new ChatType() { Id = "UNDEFINED", Name = "Undefined" }
-        });
+        modelBuilder.Entity<ChatType>().HasData(new ChatType { Id = "CHANNEL", Name = "Channel" }, new ChatType { Id = "GROUP", Name = "Group" }, new ChatType { Id = "PRIVATE", Name = "Private" }, new ChatType { Id = "UNDEFINED", Name = "Undefined" });
 
-        modelBuilder.Entity<Chat>().HasData(new[]
-        {
-            new Chat() { Id = -1, Name = "IntegrationTestChat", Description = "IntegrationTestChat", ChatTypeId = "PRIVATE", RawData = "{ \"test\": \"test\" }", RawDataHash = "-1063294487", InsertDate = DateTime.UtcNow },
-            new Chat() { Id = 1, Name = "zuev56", ChatTypeId = "PRIVATE", RawData = "{ \"Id\": 210281448 }", RawDataHash = "-1063294487", InsertDate = DateTime.UtcNow }
-        });
+        modelBuilder.Entity<Chat>().HasData(new Chat { Id = -1, Name = "IntegrationTestChat", Description = "IntegrationTestChat", ChatTypeId = "PRIVATE", RawData = "{ \"test\": \"test\" }", RawDataHash = "-1063294487", InsertDate = DateTime.UtcNow }, new Chat { Id = 1, Name = "zuev56", ChatTypeId = "PRIVATE", RawData = "{ \"Id\": 210281448 }", RawDataHash = "-1063294487", InsertDate = DateTime.UtcNow });
 
-        modelBuilder.Entity<UserRole>().HasData(new[]
-        {
-            new UserRole() { Id = "OWNER", Name = "Owner", Permissions = "[ \"All\" ]" },
-            new UserRole() { Id = "ADMIN", Name = "Administrator", Permissions = "[ \"adminCmdGroup\", \"moderatorCmdGroup\", \"userCmdGroup\" ]" },
-            new UserRole() { Id = "MODERATOR", Name = "Moderator", Permissions = "[ \"moderatorCmdGroup\", \"userCmdGroup\" ]" },
-            new UserRole() { Id = "USER", Name = "User", Permissions = "[ \"userCmdGroup\" ]" }
-        });
+        modelBuilder.Entity<UserRole>().HasData(new UserRole { Id = "OWNER", Name = "Owner", Permissions = "[ \"All\" ]" }, new UserRole { Id = "ADMIN", Name = "Administrator", Permissions = "[ \"adminCmdGroup\", \"moderatorCmdGroup\", \"userCmdGroup\" ]" }, new UserRole { Id = "MODERATOR", Name = "Moderator", Permissions = "[ \"moderatorCmdGroup\", \"userCmdGroup\" ]" }, new UserRole { Id = "USER", Name = "User", Permissions = "[ \"userCmdGroup\" ]" });
 
-        modelBuilder.Entity<User>().HasData(new[]
-        {
-            new User() { Id = -10, Name = "Unknown", FullName = "for exported message reading", UserRoleId = "USER", IsBot = false, RawData = "{ \"test\": \"test\" }", RawDataHash = "-1063294487", InsertDate = DateTime.UtcNow },
-            new User() { Id = -1, Name = "IntegrationTestUser", FullName = "IntegrationTest", UserRoleId = "USER", IsBot = false, RawData = "{ \"test\": \"test\" }", RawDataHash = "-1063294487", InsertDate = DateTime.UtcNow },
-            new User() { Id = 1, Name = "zuev56", FullName = "Сергей Зуев", UserRoleId = "OWNER", IsBot = false, RawData = "{ \"Id\": 210281448 }", RawDataHash = "-1063294487", InsertDate = DateTime.UtcNow }
-        });
+        modelBuilder.Entity<User>().HasData(new User { Id = -10, Name = "Unknown", FullName = "for exported message reading", UserRoleId = "USER", IsBot = false, RawData = "{ \"test\": \"test\" }", RawDataHash = "-1063294487", InsertDate = DateTime.UtcNow }, new User { Id = -1, Name = "IntegrationTestUser", FullName = "IntegrationTest", UserRoleId = "USER", IsBot = false, RawData = "{ \"test\": \"test\" }", RawDataHash = "-1063294487", InsertDate = DateTime.UtcNow }, new User { Id = 1, Name = "zuev56", FullName = "Сергей Зуев", UserRoleId = "OWNER", IsBot = false, RawData = "{ \"Id\": 210281448 }", RawDataHash = "-1063294487", InsertDate = DateTime.UtcNow });
 
-        modelBuilder.Entity<MessageType>().HasData(new[]
-        {
-            new MessageType() { Id = "UKN", Name = "Unknown" },
-            new MessageType() { Id = "TXT", Name = "Text" },
-            new MessageType() { Id = "PHT", Name = "Photo" },
-            new MessageType() { Id = "AUD", Name = "Audio" },
-            new MessageType() { Id = "VID", Name = "Video" },
-            new MessageType() { Id = "VOI", Name = "Voice" },
-            new MessageType() { Id = "DOC", Name = "Document" },
-            new MessageType() { Id = "STK", Name = "Sticker" },
-            new MessageType() { Id = "LOC", Name = "Location" },
-            new MessageType() { Id = "CNT", Name = "Contact" },
-            new MessageType() { Id = "SRV", Name = "Service message" },
-            new MessageType() { Id = "OTH", Name = "Other" }
-        });
+        modelBuilder.Entity<MessageType>().HasData(new MessageType { Id = "UKN", Name = "Unknown" }, new MessageType { Id = "TXT", Name = "Text" }, new MessageType { Id = "PHT", Name = "Photo" }, new MessageType { Id = "AUD", Name = "Audio" }, new MessageType { Id = "VID", Name = "Video" }, new MessageType { Id = "VOI", Name = "Voice" }, new MessageType { Id = "DOC", Name = "Document" }, new MessageType { Id = "STK", Name = "Sticker" }, new MessageType { Id = "LOC", Name = "Location" }, new MessageType { Id = "CNT", Name = "Contact" }, new MessageType { Id = "SRV", Name = "Service message" }, new MessageType { Id = "OTH", Name = "Other" });
 
-        modelBuilder.Entity<Command>().HasData(new[]
-        {
-            new Command() { Id = "/Test".ToLowerInvariant(), Script = "SELECT 'Test'", Description = "Тестовый запрос к боту. Возвращает ''Test''", Group = "moderatorCmdGroup" },
-            new Command() { Id = "/NullTest".ToLowerInvariant(), Script = "SELECT null", Description = "Тестовый запрос к боту. Возвращает NULL", Group = "moderatorCmdGroup" },
-            new Command() { Id = "/Help".ToLowerInvariant(), Script = "SELECT bot.sf_cmd_get_help({0})", DefaultArgs = "<UserRoleId>", Description = "Получение справки по доступным функциям", Group = "userCmdGroup" },
-            new Command() { Id = "/SqlQuery".ToLowerInvariant(), Script = "select (with userQuery as ({0}) select json_agg(q) from userQuery q)", DefaultArgs = "select 'Pass your query as a parameter in double quotes'", Description = "SQL-запрос", Group = "adminCmdGroup" }
-        });
+        modelBuilder.Entity<Command>().HasData(new Command { Id = "/Test".ToLowerInvariant(), Script = "SELECT 'Test'", Description = "Тестовый запрос к боту. Возвращает ''Test''", Group = "moderatorCmdGroup" }, new Command { Id = "/NullTest".ToLowerInvariant(), Script = "SELECT null", Description = "Тестовый запрос к боту. Возвращает NULL", Group = "moderatorCmdGroup" }, new Command { Id = "/Help".ToLowerInvariant(), Script = "SELECT bot.sf_cmd_get_help({0})", DefaultArgs = "<UserRoleId>", Description = "Получение справки по доступным функциям", Group = "userCmdGroup" }, new Command { Id = "/SqlQuery".ToLowerInvariant(), Script = "select (with userQuery as ({0}) select json_agg(q) from userQuery q)", DefaultArgs = "select 'Pass your query as a parameter in double quotes'", Description = "SQL-запрос", Group = "adminCmdGroup" });
     }
 
     public static string GetOtherSqlScripts(string configPath)
@@ -415,9 +367,9 @@ public sealed class PostgreSqlBotContext : BotContext<PostgreSqlBotContext>
                .AddJsonFile(System.IO.Path.GetFullPath(configPath))
                .Build();
 
-        var connectionStringBuilder = new DbConnectionStringBuilder()
+        var connectionStringBuilder = new DbConnectionStringBuilder
         {
-            ConnectionString = configuration.GetSecretValue("ConnectionStrings:Default")
+            ConnectionString = configuration["ConnectionStrings:Default"]
         };
         var dbName = connectionStringBuilder["Database"] as string;
 
@@ -437,7 +389,9 @@ public sealed class PostgreSqlBotContext : BotContext<PostgreSqlBotContext>
         }
 
         if (!string.IsNullOrWhiteSpace(dbName))
+        {
             sb.Replace("DefaultDbName", dbName);
+        }
 
         return sb.ToString();
     }
