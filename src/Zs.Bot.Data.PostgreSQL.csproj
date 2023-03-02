@@ -1,15 +1,16 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFramework>net6.0</TargetFramework>
-      <PackageId>Zs.Bot.Data.PostgreSQL</PackageId>
-      <Nullable>enable</Nullable>
-      <Version>6.0.10</Version>
-      <PublishTrimmed>true</PublishTrimmed>
-      <Authors>zuev56 (Sergei Zuev)</Authors>
-      <Company>zuev56 (Sergei Zuev)</Company>
-      <RepositoryUrl>https://github.com/zuev56/Zs.Bot.Data.PostgreSQL</RepositoryUrl>
-      <PackageProjectUrl>https://www.nuget.org/packages/Zs.Bot.Data.PostgreSQL</PackageProjectUrl>
+    <TargetFramework>net7.0</TargetFramework>
+    <PackageId>Zs.Bot.Data.PostgreSQL</PackageId>
+    <Nullable>enable</Nullable>
+    <PublishTrimmed>true</PublishTrimmed>
+    <EnforceCodeStyleInBuild>True</EnforceCodeStyleInBuild>
+    <Version>7.0.0</Version>
+    <Authors>zuev56 (Sergei Zuev)</Authors>
+    <Company>zuev56 (Sergei Zuev)</Company>
+    <RepositoryUrl>https://github.com/zuev56/Zs.Bot.Data.PostgreSQL</RepositoryUrl>
+    <PackageProjectUrl>https://www.nuget.org/packages/Zs.Bot.Data.PostgreSQL</PackageProjectUrl>
   </PropertyGroup>
 
   <ItemGroup>
@@ -20,19 +21,19 @@
   </ItemGroup>
   
   <ItemGroup>
-    <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="6.0.10">
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="7.0.3">
       <PrivateAssets>all</PrivateAssets>
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
     </PackageReference>
-    <PackageReference Include="Microsoft.EntityFrameworkCore.Relational" Version="6.0.10" />
-    <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="6.0.10">
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Relational" Version="7.0.3" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="7.0.3">
       <PrivateAssets>all</PrivateAssets>
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
     </PackageReference>
-    <PackageReference Include="Microsoft.Extensions.Configuration.EnvironmentVariables" Version="6.0.1" />
-    <PackageReference Include="Microsoft.Extensions.Configuration.Json" Version="6.0.0" />
-    <PackageReference Include="Npgsql.EntityFrameworkCore.PostgreSQL" Version="6.0.7" />
-    <PackageReference Include="Zs.Bot.Data" Version="6.0.8" />
+    <PackageReference Include="Microsoft.Extensions.Configuration.EnvironmentVariables" Version="7.0.0" />
+    <PackageReference Include="Microsoft.Extensions.Configuration.Json" Version="7.0.0" />
+    <PackageReference Include="Npgsql.EntityFrameworkCore.PostgreSQL" Version="7.0.3" />
+    <PackageReference Include="Zs.Bot.Data" Version="7.0.0" />
   </ItemGroup>
 
   <ItemGroup>
