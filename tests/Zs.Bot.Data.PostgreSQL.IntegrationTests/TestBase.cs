@@ -41,6 +41,7 @@ public abstract class TestBase : IDisposable
 
         var services = new ServiceCollection();
         services.AddSingleton<IConfiguration>(configuration);
+        services.AddLogging();
         services.AddDbContextFactory<PostgreSqlBotContext>(options => options.UseNpgsql(ConnectionString));
 
         services.AddSingleton(RawDataStructure);
