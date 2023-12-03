@@ -3,7 +3,7 @@
   <PropertyGroup>
     <TargetFramework>net7.0</TargetFramework>
     <Nullable>enable</Nullable>
-    <Version>7.1.3</Version>
+    <Version>7.1.4</Version>
     <PackageId>Zs.Bot.Data.PostgreSQL</PackageId>
     <Authors>zuev56 (Sergei Zuev)</Authors>
     <Company>zuev56 (Sergei Zuev)</Company>
@@ -24,8 +24,7 @@
     <PackageReference Include="Microsoft.Extensions.Configuration.EnvironmentVariables" Version="7.0.0" />
     <PackageReference Include="Microsoft.Extensions.Configuration.Json" Version="7.0.0" />
     <PackageReference Include="Npgsql.EntityFrameworkCore.PostgreSQL" Version="7.0.11" />
-    <PackageReference Include="Zs.Bot.Data" Version="7.1.3" />
-    <PackageReference Include="Zs.Bot.Services" Version="7.1.3" />
+    <PackageReference Include="Zs.Bot.Services" Version="7.1.4" />
   </ItemGroup>
 
   <ItemGroup>
